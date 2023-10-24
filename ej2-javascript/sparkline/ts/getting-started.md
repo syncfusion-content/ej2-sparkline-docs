@@ -11,7 +11,7 @@ domainurl: ##DomainURL##
 
 # Getting started in ##Platform_Name## Sparkline control
 
-This section explains the steps to create a simple Sparkline and demonstrates the basic usage of the TreeGrid component using the Essential JS 2 [quickstart](https://github.com/syncfusion/ej2-quickstart.git) seed repository. This seed repository is pre-configured with the Essential JS 2 package.
+This section explains the steps to create a simple Sparkline and demonstrates the basic usage of the TreeGrid component using the Essential JS 2 [quickstart](https://github.com/SyncfusionExamples/ej2-quickstart-webpack-) seed repository. This seed repository is pre-configured with the Essential JS 2 package.
 
 > This application is integrated with the `webpack.config.js` configuration and uses the latest version of the [webpack-cli](https://webpack.js.org/api/cli/#commands). It requires node `v14.15.0` or higher. For more information about webpack and its features, refer to the [webpack documentation](https://webpack.js.org/guides/getting-started/).
 
@@ -30,15 +30,23 @@ The following list of minimum dependencies are required to use the sparkline:
 
 Open the command prompt from the required directory, and run the following command to clone the Syncfusion JavaScript (Essential JS 2) quickstart project from [GitHub](https://github.com/SyncfusionExamples/ej2-quickstart-webpack-).
 
-```
-    git clone https://github.com/SyncfusionExamples/ej2-quickstart-webpack- ej2-quickstart
-```
+{% tabs %}
+{% highlight bash tabtitle="CMD" %}
+
+git clone https://github.com/SyncfusionExamples/ej2-quickstart-webpack- ej2-quickstart
+
+{% endhighlight %}
+{% endtabs %}
 
 After cloning the application in the `ej2-quickstart` folder, run the following command line to navigate to the `ej2-quickstart` folder.
 
-```
-    cd ej2-quickstart
-```
+{% tabs %}
+{% highlight bash tabtitle="CMD" %}
+
+cd ej2-quickstart
+
+{% endhighlight %}
+{% endtabs %}
 
 ## Add Syncfusion JavaScript packages
 
@@ -46,9 +54,13 @@ Syncfusion JavaScript (Essential JS 2) packages are available on the [npmjs.com]
 
 The quickstart application is preconfigured with the dependent [@syncfusion/ej2](https://www.npmjs.com/package/@syncfusion/ej2) package in the `~/package.json` file. Use the following command to install the dependent npm packages from the command prompt.
 
-```
-    npm install
-```
+{% tabs %}
+{% highlight bash tabtitle="NPM" %}
+
+npm install
+
+{% endhighlight %}
+{% endtabs %}
 
 ## Import the Syncfusion CSS styles
 
@@ -56,9 +68,13 @@ Syncfusion JavaScript controls come with [built-in themes](https://ej2.syncfusio
 
 The quickstart application is preconfigured to use the `Material` theme in the `~/src/styles/styles.css` file, as shown below: 
 
-```
-  @import "../../node_modules/@syncfusion/ej2/material.css";
-```
+{% tabs %}
+{% highlight css tabtitle="style.css" %}
+
+@import "../../node_modules/@syncfusion/ej2/material.css";
+
+{% endhighlight %}
+{% endtabs %}
 
 > You can check out the [themes](https://ej2.syncfusion.com/documentation/appearance/theme/) section to know more about built-in themes and CSS reference for individual controls.
 
@@ -66,7 +82,9 @@ The quickstart application is preconfigured to use the `Material` theme in the `
 
 Add an HTML div element for map into your `index.html`. `[src/index.html]`
 
-```html
+{% tabs %}
+{% highlight html tabtitle="index.html" %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -85,11 +103,15 @@ Add an HTML div element for map into your `index.html`. `[src/index.html]`
 </body>
 
 </html>
-```
+
+{% endhighlight %}
+{% endtabs %}
 
 Then, import the sparkline control into your `index.ts` to instantiate a sparkline and append its instance to the `#container`.
 
-```javascript
+{% tabs %}
+{% highlight ts tabtitle="app.ts" %}
+
 import { Sparkline } from '@syncfusion/ej2-charts';
 
 // Initialize the sparkline control
@@ -97,21 +119,31 @@ let sparkline: Sparkline = new Sparkline();
 
 // Render initialized sparkline
 sparkline.appendTo('#element');
-```
+
+{% endhighlight %}
+{% endtabs %}
 
 Now, use the `npm run start` command to run the application in browser.
 
-```
-npm run start
-```
+{% tabs %}
+{% highlight bash tabtitle="NPM" %}
 
-```ts
+npm run start
+
+{% endhighlight %}
+{% endtabs %}
+
+{% tabs %}
+{% highlight ts tabtitle="app.ts" %}
+
 import { Sparkline } from '@syncfusion/ej2-charts';
 
 let sparkline: Sparkline = new Sparkline();
 
 sparkline.appendTo('#element');
-```
+
+{% endhighlight %}
+{% endtabs %}
 
 Since the data source has not been specified to the sparkline, no shapes will be rendered. Only an empty SVG element is appended to the sparkline container.
 
@@ -125,12 +157,14 @@ In the current application, the above basic sparkline is modified to visualize t
 
 In this application, the tooltip feature of the sparkline is used. Now, import the SparklineTooltip module from the sparkline package, and inject it into the sparkline control using the `Sparkline.Inject` method.
 
-```javascript
+{% tabs %}
+{% highlight ts tabtitle="app.ts" %}
 
 import { Sparkline, SparklineTooltip } from '@syncfusion/ej2-charts';
 Sparkline.Inject(SparklineTooltip);
 
-```
+{% endhighlight %}
+{% endtabs %}
 
 ## Bind data source to sparkline
 
